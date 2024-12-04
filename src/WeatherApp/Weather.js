@@ -8,9 +8,10 @@ function Weather() {
   const [error, setError] = useState('');
 
   const fetchWeather = (city) => {
-    const apikey = 'f1ea17d967f24d69b4c63739240412';
+    const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
+    const apiUrl = process.env.REACT_APP_API_URL;
     axios
-      .get(`https://api.weatherapi.com/v1/current.json?key=${apikey}&q=${city}&aqi=no`)
+    .get(`${apiUrl}/current.json?key=${apiKey}&q=${city}&aqi=no`)
       .then((response) => {
         setWeather(response.data);
         setError('');
