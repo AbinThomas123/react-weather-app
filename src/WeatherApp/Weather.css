@@ -5,97 +5,91 @@
   }
   
   body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
     background-color: #9198e5;
   }
   
   .weather-app {
-    background-image: url(forcast.jpg);
+    background-image: url('forcast.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    flex-direction: column; /* Change to column for smaller screens */
-    width: 90%; /* Use percentage instead of fixed width */
-    max-width: 1200px; /* Max width to prevent it from becoming too wide */
-    border-top-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: __Inter_0ec1f4, __Inter_Fallback_0ec1f4;
-    margin-top: 5%;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    margin-top: 0;
   }
   
   .weather-icon {
-    margin-top: 1.75rem;
-    margin-bottom: 1.75rem;
-    margin-left: 4rem;
+    margin: 1.75rem 0 1.75rem 4rem;
     padding: 0.25rem;
   }
   
   .weather-card-container {
-    padding: 0;
-    width: 60%;
-    height: 560px;
+    width: 100%;
+    height: auto;
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0;
+    padding: 0;
   }
   
   .weather-card {
     opacity: 1;
     gap: 2.5rem;
     flex-direction: row;
-    right: 0;
-    left: 0;
-    bottom: 2.5rem;
     position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2.5rem;
+    display: flex;
+    justify-content: center;
     text-align: center;
     align-items: center;
-    display: flex;
   }
   
   .weather-temp {
     font-size: 4rem;
     line-height: 1;
-    --tw-text-opacity: 1;
-    color: rgb(243 244 246 / var(--tw-text-opacity));
+    color: rgb(243 244 246);
     font-weight: 600;
-    align-items: center;
     display: flex;
-    margin: 0;
+    align-items: center;
     margin-left: 30px;
   }
   
-  .weather-country {
-    --tw-text-opacity: 1;
-    color: rgb(243 244 246 / var(--tw-text-opacity));
+  .weather-country, .weather-region {
+    color: rgb(243 244 246);
     font-size: 2rem;
     margin-top: 0.5rem;
   }
   
   .weather-region {
-    --tw-text-opacity: 1;
-    color: rgb(243 244 246 / var(--tw-text-opacity));
     font-size: 1.5rem;
     margin-top: 0.25rem;
   }
   
   .weather-condition {
-    --tw-text-opacity: 1;
-    color: rgb(229 231 235 / var(--tw-text-opacity));
-    text-align: center;
+    color: rgb(229 231 235);
     font-size: 1.25rem;
     margin-top: 1rem;
+    text-align: center;
   }
   
   .search-form-container {
-    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: rgb(71 85 105 / var(--tw-bg-opacity));
-    width: 30% !important;
-    height: 72vh;
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
   }
   
   .search-form {
@@ -107,7 +101,7 @@
   .search-form input {
     flex: 1;
     padding: 10px;
-    font-size: 1em;
+    font-size: 1.2em;
     border: none;
     border-bottom: 2px solid #ccc;
     background: transparent;
@@ -145,91 +139,46 @@
     margin-top: 10px;
   }
   
-  blockquote,
-  dd,
-  dl,
-  figure,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  hr,
-  p,
-  pre {
-    margin: 0;
-  }
-  
-  /* Mobile responsiveness */
+  /* Responsive Styles */
   @media (max-width: 768px) {
-    .weather-app {
-      flex-direction: column; /* Stack elements vertically */
-      width: 100%; /* Make the app take up the full screen */
-      margin-top: 20px;
-    }
-  
     .weather-card-container {
-      width: 90%; /* Make the card container take up most of the screen */
-      height: auto; /* Allow the card container to resize based on content */
-      margin-left: auto;
-      margin-right: auto;
-    }
-  
-    .search-form-container {
-      width: 100%; /* Make search form container full width */
-      height: auto; /* Adjust height automatically */
-    }
-  
-    .search-form input {
-      width: 100%; /* Make input take up full width */
-      padding: 15px;
+      width: 90%;
+      height: auto;
     }
   
     .weather-card {
-      position: relative; /* Let the card adjust its position */
+      flex-direction: column;
       bottom: 0;
-      width: 90%; /* Adjust the width of the weather card */
-      gap: 1rem; /* Reduce the gap between elements */
-      margin: 0 auto;
-      font-size: 1rem; /* Adjust the font size for better readability */
     }
   
     .weather-temp {
-      font-size: 2rem; /* Smaller font size for mobile */
-      margin-left: 0;
-      margin-top: 1rem;
+      font-size: 3rem;
     }
   
     .weather-country,
     .weather-region {
-      font-size: 1.2rem; /* Adjust font size for small screens */
+      font-size: 1.5rem;
     }
   
     .weather-condition {
-      font-size: 1rem; /* Adjust font size for conditions */
+      font-size: 1rem;
     }
   
-    .weather-icon {
-      margin-left: 0;
-      margin-top: 1rem;
-    }
-  
-    .search-form button {
-      width: 100%; /* Make button take up full width */
-      margin-top: 10px;
+    .weather-app {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 0 1rem;
     }
   }
   
-  /* For very small mobile devices (portrait) */
   @media (max-width: 480px) {
     .weather-temp {
-      font-size: 1.8rem; /* Further reduce font size for very small screens */
+      font-size: 2.5rem;
     }
   
     .weather-country,
     .weather-region {
-      font-size: 1.1rem;
+      font-size: 1.25rem;
     }
   
     .weather-condition {
@@ -237,15 +186,23 @@
     }
   
     .search-form-container {
-      width: 95%; /* Make search form container almost full width */
+      width: 90%;
+      height: auto;
+    }
+  
+    .weather-app {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 1rem;
     }
   
     .search-form input {
-      padding: 12px;
+      font-size: 1em;
     }
   
-    .weather-card {
-      width: 100%;
+    .search-form button {
+      padding: 8px;
+      font-size: 1em;
     }
   }
   

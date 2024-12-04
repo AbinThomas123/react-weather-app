@@ -13,7 +13,6 @@ function Weather() {
       .get(`https://api.weatherapi.com/v1/current.json?key=${apikey}&q=${city}&aqi=no`)
       .then((response) => {
         setWeather(response.data);
-        
         setError('');
       })
       .catch((error) => {
@@ -66,4 +65,3 @@ function Weather() {
 }
 
 export default Weather;
-
